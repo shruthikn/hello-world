@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="person" class="com.learning.spring.test.Person" scope="prototype">
+		<constructor-arg index="0" name="id" type="int" value="123"></constructor-arg>
+		<constructor-arg index="1" name="name" type="String"
+			value="Shruthi"></constructor-arg>
+		<property name="taxId" value="345"></property>
+		<property name="address">
+			<value>115, Main Street East, Hamilton, Ontario L8N1G5</value>
+		</property>
+		<property name="workLog" ref="worklog"></property>
+	</bean>
+
+	<bean id="worklog" class="com.learning.spring.test.WorkLog" scope="singleton">
+		<constructor-arg index="0" name="activity" type="String"
+			value="walking"></constructor-arg>
+		<constructor-arg index="1" name="durationInHours"
+			type="int" value="4"></constructor-arg>
+		<property name="workLogId" value="666"></property>
+	</bean>
+
+</beans>
