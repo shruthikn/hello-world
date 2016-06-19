@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="lion" class="com.learning.spring.test.Animal">
+		<property name="name" value="Igor"></property>
+		<property name="type" value="lion"></property>
+	</bean>
+
+	<bean id="elephant" class="com.learning.spring.test.Animal">
+		<property name="name" value="Bheema"></property>
+		<property name="type" value="elephant"></property>
+	</bean>
+
+	<bean id="bear" class="com.learning.spring.test.Animal">
+		<property name="name" value="john"></property>
+		<property name="type" value="bear"></property>
+	</bean>
+	
+	<bean id="jungle" class="com.learning.spring.test.Jungle">
+		<property name="largest" ref="elephant"></property>
+		<property name="animals">
+			<map>
+				<entry key="lion" value-ref="lion"/>
+				<entry key="elephant" value-ref="elephant"/>
+				<entry key="bear" value-ref="bear"/>
+			</map>
+		</property>
+		<property name="foods">
+			<props>
+				<prop key="Gorilla">Banana</prop>
+				<prop key="Panda">Bamboo</prop>
+				<prop key="Snake">Eggs</prop>
+			</props>
+		</property>
+	</bean>
+	
+</beans>
